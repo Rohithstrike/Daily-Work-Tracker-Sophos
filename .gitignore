@@ -1,0 +1,43 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# build output
+dist/
+dist-ssr/
+build/
+*.local
+
+# environment - NEVER commit real secrets
+.env
+.env.*
+!.env.example
+
+# editors
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+*.log
+
+# test / tooling caches
+coverage/
+.vitest/
+.eslintcache
+tsconfig.tsbuildinfo
+
+# os
+.DS_Store
+Thumbs.db
+
+# vercel / supabase local
+.vercel
+supabase/.temp
+supabase/.branches
