@@ -103,7 +103,7 @@ export const ACTIVITY_RULES: Readonly<Record<ActivityType, ActivityRule>> = {
   },
   MISC_HELP: {
     type: 'MISC_HELP',
-    label: 'Miscalculation / Help',
+    label: 'Miscellaneous / Help',
     shortLabel: 'Help',
     description: 'Helping a colleague or calculation-related work. Priority is not tracked.',
     usesPriority: false,

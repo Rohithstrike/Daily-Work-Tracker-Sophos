@@ -52,6 +52,7 @@ export function ActivityFormDialog({ open, onClose, onSubmit, workDate, timezone
     watch,
     control,
     reset,
+    setValue,
     setError,
     formState: { errors, isSubmitting },
   } = useForm<ActivityFormValues>({
@@ -65,6 +66,15 @@ export function ActivityFormDialog({ open, onClose, onSubmit, workDate, timezone
 
   const selectedType = (watch('type') ?? 'CASE') as ActivityType;
   const rule = ACTIVITY_RULES[selectedType];
+
+  useEffect(() => {
+    if (!rule.usesPriority) {
+      setValue('priority', null, {
+        shouldValidate: false,
+        shouldDirty: true,
+      });
+    }
+  }, [selectedType, rule.usesPriority, setValue]);
 
   const submit = handleSubmit(async (values) => {
     const priority = rule.usesPriority ? ((values.priority as Priority) ?? null) : null;
