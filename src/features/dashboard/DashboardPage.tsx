@@ -144,7 +144,7 @@ export default function DashboardPage() {
         <>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
             <Metric label="Working days" value={String(summary.workingDays)} />
-            <Metric label="Items recorded" value={String(summary.totalQuantity)} />
+            <Metric label="Total case Items recorded" value={String(summary.totalQuantity)} />
             <Metric label="Total work time" value={formatDuration(summary.totalWorkSeconds)} />
             <Metric label="Total lunch time" value={formatDuration(summary.totalBreakSeconds)} />
           </div>
